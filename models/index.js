@@ -1,5 +1,7 @@
-const User = require('./User');
-const Thought = require('./Thought');
-const Reaction = require('./Reaction');
+    // Import models
+    const User = require('./User');
+    const Thought = require('./Thought');
+    const Reaction = require('./Reaction');
 
-module.exports = { User, Thought, Reaction };
+    // Export models
+    module.exports = { User, Thought, Reaction };

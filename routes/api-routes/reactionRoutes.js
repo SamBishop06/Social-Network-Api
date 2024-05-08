@@ -1,13 +1,17 @@
-const router = require('express').Router();
-const {
-    addReaction,
-    deleteReaction
-} = require('../../controllers/reactionController');
+    const router = require('express').Router();
+    const { addReaction, deleteReaction } = require('../../controllers/reactionController');
 
-router.route('/')
-    .post(addReaction);
+    // Routes for reactions
 
-    router.route('/:reactionId')
-    .delete(deleteReaction);
+    // Route to add a reaction
+    router.route('/').post(addReaction);
 
-module.exports = router;
+    // Route to delete a reaction by ID
+    router.route('/:reactionId').delete(deleteReaction);
+
+    module.exports = router;
+
+
+
+
+

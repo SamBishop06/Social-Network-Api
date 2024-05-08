@@ -1,8 +1,8 @@
-    // Importing required modules
+    // Import required modules
     const mongoose = require('mongoose');
     const { reactionSchema } = require('./Reaction');
 
-    // Defining the schema for a thought
+    // Define thought schema
     const thoughtSchema = new mongoose.Schema({
     // Text of the thought
     thoughtText: {
@@ -32,9 +32,8 @@
     return this.reactions.length;
     });
 
-    // Creating Mongoose model for the Thought schema
+    // Create Mongoose model for the Thought schema
     const Thought = mongoose.model('Thought', thoughtSchema);
 
-    // Exporting the Thought model
+    // Export the Thought model
     module.exports = Thought;
-
