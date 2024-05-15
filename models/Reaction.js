@@ -1,11 +1,17 @@
+    // This file defines the Mongoose schema for reactions
     const mongoose = require('mongoose');
+    const Schema = mongoose.Schema;
 
     // Define reaction schema
-    const reactionSchema = new mongoose.Schema({
-    reactionBody: {
+    const reactionSchema = new Schema({
+    reactionId: {
+        type: Schema.Types.ObjectId,
+    default: mongoose.Types.ObjectId,
+    },
+    reactionBody:{
         type: String,
         required: true,
-        maxlength: 280
+        maxlength: 280,
     },
     username: {
         type: String,
@@ -16,7 +22,8 @@
         default: Date.now,
         // Custom getter for date formatting
         get: timestamp => dateFormat(timestamp)
-    }
+    },
+    
     });
 
     module.exports = { reactionSchema };

@@ -7,7 +7,7 @@ const getAllUsers = async (req, res) => {
         res.json(users);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'Failed to get users.' });
+        res.status(500).json({ error: 'Failed to find users.' });
     }
 };
 
@@ -22,7 +22,7 @@ const getUserById = async (req, res) => {
         res.json(user);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'Failed to get user.' });
+        res.status(500).json({ error: 'Failed to find user.' });
     }
 };
 
@@ -48,7 +48,7 @@ const updateUser = async (req, res) => {
         res.json(user);
     } catch (error) {
         console.error(error);
-        res.status(400).json({ error: 'Failed to update user.' });
+        res.status(400).json({ error: 'Failed to create user.' });
     }
 };
 

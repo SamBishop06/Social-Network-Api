@@ -1,7 +1,7 @@
 {
   "name": "social-network-api",
   "version": "1.0.0",
-  "description": "social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list.",
+  "description": "This web platform facilitates social interaction by enabling users to express their thoughts, engage with their friends' posts through reactions, and curate a list of connections.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/SamBishop06/Social-Network-Api",
   "dependencies": {
     "express": "^4.19.2",
-    "mongoose": "^8.3.3"
+    "mongoose": "^8.3.4",
+    "nodemon": "^3.1.0"
   }
 }

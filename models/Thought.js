@@ -1,9 +1,9 @@
-    // Import required modules
-    const mongoose = require('mongoose');
-    const { reactionSchema } = require('./Reaction');
+// Import required modules
+const mongoose = require('mongoose');
+const { reactionSchema } = require('./Reaction');
 
-    // Define thought schema
-    const thoughtSchema = new mongoose.Schema({
+// Define thought schema
+const thoughtSchema = new mongoose.Schema({
     // Text of the thought
     thoughtText: {
         type: String,
@@ -25,15 +25,19 @@
     },
     // Array of reactions associated with the thought
     reactions: [reactionSchema]
-    });
+}, // <-- Missing comma here
+{
+    toJSON: { virtuals: true },
+    id: false,
+});
 
-    // Virtual property to calculate the reaction count
-    thoughtSchema.virtual('reactionCount').get(function() {
+// Virtual property to calculate the reaction count
+thoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
-    });
+});
 
-    // Create Mongoose model for the Thought schema
-    const Thought = mongoose.model('Thought', thoughtSchema);
+// Create Mongoose model for the Thought schema
+const Thought = mongoose.model('Thought', thoughtSchema);
 
-    // Export the Thought model
-    module.exports = Thought;
+// Export the Thought model
+module.exports = Thought;
